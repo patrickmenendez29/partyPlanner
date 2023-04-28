@@ -1,15 +1,12 @@
-import { auth } from "../firebaseConfig";
 import { useState, useEffect, useContext } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
 import Events from "../components/events";
-import { PartyEvent, getEvent, getEvents } from "../Persistence/DB";
+import { PartyEvent, getEvents } from "../Persistence/DB";
 import { AuthContext } from "../App";
 import "../styles/list.css"
 
 
 function List() {
 
-    const navigate = useNavigate();
     const [events, setEvents] = useState<PartyEvent[]>([]);
     const auth = useContext(AuthContext);
 
@@ -17,7 +14,6 @@ function List() {
     // load events
     useEffect(() => {
         getEvents().then((events) => {
-            //setEvents(events);
             setEvents(events);
         });
     }, []);

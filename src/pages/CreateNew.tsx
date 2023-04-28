@@ -1,5 +1,4 @@
-import { auth } from "../firebaseConfig";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../App";
 
 
@@ -21,7 +20,7 @@ function CreateNew() {
                 <br />
 
         <div className="party_planner">
-            <form className="party_htmlForm" action="index.html" method="">
+            <form className="party_htmlForm" method="">
                 <label htmlFor="fpartyname">First name of individual htmlFor the party</label><br />
                 <input type="text" id="fpartyname" name="fname" placeholder="John" /><br />
                 <label htmlFor="lpartyname">Last name of individual htmlFor the party</label><br />

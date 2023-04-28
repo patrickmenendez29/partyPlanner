@@ -3,7 +3,6 @@ import { AuthContext } from "../App";
 import "../styles/header.css"
 import { signOut } from "firebase/auth";
 import { auth as FsAuth } from "../firebaseConfig";
-import { useNavigate } from "react-router-dom";
 
 
 export default function Header() {

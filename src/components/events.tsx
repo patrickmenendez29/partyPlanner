@@ -1,4 +1,4 @@
-import { PartyEvent, getEvent } from "../Persistence/DB";
+import { PartyEvent } from "../Persistence/DB";
 import "../styles/events.css"
 
 

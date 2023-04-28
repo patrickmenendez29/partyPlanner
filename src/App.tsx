@@ -1,11 +1,10 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, NavLink, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import List from './pages/List';
 import CreateNew from './pages/CreateNew';
 import { useState, useEffect, createContext } from 'react';
 import { auth } from './firebaseConfig';
-import { signOut } from 'firebase/auth';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './components/Footer';

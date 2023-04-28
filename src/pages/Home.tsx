@@ -1,7 +1,7 @@
 import { auth } from "../firebaseConfig";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState, useContext, useRef } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import { AuthContext } from "../App";
 import "../styles/home.css"
@@ -71,7 +71,6 @@ function Home(){
             navigate("/list");
         })
         .catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
             alert(errorMessage);
         });
@@ -86,9 +85,7 @@ function Home(){
         signInWithPopup(auth, provider)
         .then((result) => {
             // This gives you a Google Access Token. You can use it to access the Google API.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
 
-            const token = credential!.accessToken;
             // The signed-in user info.
             const user = result.user;
             // ...
@@ -104,6 +101,7 @@ function Home(){
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
+            console.log(errorCode, errorMessage, email, credential);
         });
     }
 
@@ -205,7 +203,7 @@ function Home(){
                 <div>
                 </div>
              </div>
-             <img className="image" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-edff8c3fe6afcab5c6457e3c7bd011f5c1745161.jpg" />
+             <img className="image" alt="cover" src="https://media.npr.org/assets/img/2022/11/04/gettyimages-1183414292-1-_slide-edff8c3fe6afcab5c6457e3c7bd011f5c1745161.jpg" />
  
            </div>
             </>
