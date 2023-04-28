@@ -22,7 +22,7 @@ export async function getEvents() {
 
 
 export async function getEvent(id: string) {
-    return await fetch(`http://localhost:3000/events/${id}.json`)
+    return await fetch(`https://ts--astounding-cobbler-8d4eb0.netlify.app/${id}.json`)
         .then(res => res.json())
         .then(res => res)
         .catch(err => console.log(err))
