@@ -1,0 +1,9 @@
+.footer {
+    background-color: var(--systemOrange);
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+}

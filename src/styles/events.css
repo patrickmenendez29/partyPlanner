@@ -1,0 +1,14 @@
+
+tr {
+    padding: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+td {
+    border: none;
+}
+/* give background color to everey other row */
+tr:nth-child(even) {
+    background-color: #d6d6d6;
+}

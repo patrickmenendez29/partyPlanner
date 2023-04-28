@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 80px;
+    background-color: var(--systemPurple);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+
+}
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+.logoutButton {
+    width: 40%;
+    color: white;
+}
+
+.welcomeText { 
+    width: 60%;  
+}
