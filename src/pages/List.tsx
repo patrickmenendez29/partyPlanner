@@ -55,7 +55,11 @@ function List() {
                         <th></th>
                         <th></th>
                     {
+                        
                         events.map((event) => {
+                            if (event === undefined) {
+                                return <></>
+                            }
                             return <Events key={event.id} event={event} />
                         })
                     }

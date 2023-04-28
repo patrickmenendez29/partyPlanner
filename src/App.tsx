@@ -8,6 +8,8 @@ import { auth } from './firebaseConfig';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Details from './pages/Details';
+
 
 interface authContext {
   isLoggedIn: boolean;
@@ -47,6 +49,7 @@ function App() {
               <Route path='/' element={<Home />}/>
               <Route path='/list' element={<List />}/>
               <Route path='/create' element={<CreateNew />}/>
+              <Route path='/details' element={<Details />}/>
             </Routes>
         </Router>
     

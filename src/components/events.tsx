@@ -1,21 +1,22 @@
 import { PartyEvent } from "../Persistence/DB";
 import "../styles/events.css"
+import { NavLink } from "react-router-dom";
 
 
-function Events(tdrotds: {event: PartyEvent}) {
+function Events(props: {event: PartyEvent}) {
 
   return (
     <tr>
         
-        <h2 className="" >{tdrotds.event.name}</h2>
+        <h2 className="" >{props.event.name}</h2>
         
-        <td className="" >{`${tdrotds.event.date}`}</td>
-        <td className="" >{tdrotds.event.location}</td>
-        <td className="" >{tdrotds.event.category}</td>
-        <td className="" >{tdrotds.event.status}</td>
+        <td className="" >{`${props.event.date}`}</td>
+        <td className="" >{props.event.location}</td>
+        <td className="" >{props.event.category}</td>
+        <td className="" >{props.event.status}</td>
         
         <td>
-          <button className="button action">View</button>
+          <NavLink to={`/details?id=${props.event.id}`} >View</NavLink>
         </td>
         <td>
           <button className="button secondary">Edit</button>
