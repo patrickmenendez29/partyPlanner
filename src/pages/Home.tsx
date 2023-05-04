@@ -67,7 +67,6 @@ function Home(){
             const user = userCredential.user;
             // ...
             console.log("User signed in with id: ", user.uid);
-            window.location.reload();
             navigate("/list");
         })
         .catch((error) => {

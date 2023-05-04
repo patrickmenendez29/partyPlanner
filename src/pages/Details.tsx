@@ -14,7 +14,7 @@ export default function Details() {
     useEffect(() => {
         if (id) {
             getEvent(id).then((event) => {
-                setEvent(event);
+                setEvent(event[0]);
                 console.log(event);
             });
         }

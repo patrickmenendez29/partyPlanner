@@ -14,7 +14,8 @@ function List() {
     // load events
     useEffect(() => {
         getEvents().then((events) => {
-            setEvents(events);
+            setEvents(events as PartyEvent[]);
+            console.log(events);
         });
     }, []);
 

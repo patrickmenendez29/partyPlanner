@@ -3,7 +3,7 @@
 export interface PartyEvent {
     id: string;
     name: string;
-    date: Date;
+    date: string;
     location: string;
     category: "christmas" | "birthday" | "other";
     status: "upcoming" | "past";
@@ -11,13 +11,12 @@ export interface PartyEvent {
 
 
 export async function getEvents() {
-    const events = []
-    for (let i = 1; i < 5; i++) {
-        const event: PartyEvent = await getEvent(i.toString())
-        events.push(event)
-    }    
-    return events
-
+    // fetch events from backend using getEvents endpoint
+    return await fetch("http://localhost:5001/getEvents")
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => console.log(err))
+        
 }
 
 
@@ -25,8 +24,36 @@ export async function getEvent(id: string) {
     // get current url without subdirectories
     const url = window.location.href.split("/").slice(0, 3).join("/")
     console.log(url)
-    return await fetch(`${url}/events/${id}.json`)
+    return await fetch(`http://localhost:5001/getEvent?id=${id}`)
         .then(res => res.json())
         .then(res => res)
         .catch(err => console.log(err))
 }
+
+// update event by id
+export async function updateEvent(id: string, event: PartyEvent) {
+    return await fetch(`http://localhost:5001/updateEvent?id=${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(event)
+    })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => console.log(err))
+}
+
+// delte event by id
+export async function deleteEvent(id: string) {
+    return await fetch(`http://localhost:5001/deleteEvent?id=${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => console.log(err))
+}
+
