@@ -32,7 +32,7 @@ function CreateNew() {
     const handleCreateEvent = async (event: any) => {
         event.preventDefault();
         // send post request to backend with form data
-        const response = await fetch("http://localhost:5001/create", {
+        const response = await fetch("https://partyplanner-backend.onrender.com/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

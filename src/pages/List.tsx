@@ -41,7 +41,7 @@ function List() {
         event.preventDefault();
         console.log("deleting event");
         // delete event by adding id to query params
-        await fetch(`http://localhost:5001/deleteEvent?id=${deleteId}`, {
+        await fetch(`https://partyplanner-backend.onrender.com/deleteEvent?id=${deleteId}`, {
             method: "DELETE",
         });
 
