@@ -3,12 +3,13 @@ import "../styles/events.css"
 import { NavLink } from "react-router-dom";
 
 
-function Events(props: {event: PartyEvent}) {
+
+function Events(props: {event: PartyEvent, modalCallback: (value: boolean, id: string) => void}) {
 
   return (
     <tr>
         
-        <h2 className="" >{props.event.name}</h2>
+        <td className="" >{props.event.name}</td>
         
         <td className="" >{`${props.event.date}`}</td>
         <td className="" >{props.event.location}</td>
@@ -19,10 +20,10 @@ function Events(props: {event: PartyEvent}) {
           <NavLink to={`/details?id=${props.event.id}`} >View</NavLink>
         </td>
         <td>
-          <button className="button secondary">Edit</button>
+          <NavLink to={`/edit?id=${props.event.id}`} className="button secondary">Edit</NavLink>
         </td>
         <td>
-          <button className="button alert">Delete</button>
+          <button className="button alert" onClick={() => {props.modalCallback(true, props.event.id)}}>Delete</button>
         </td>
       
     </tr>

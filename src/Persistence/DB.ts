@@ -57,3 +57,21 @@ export async function deleteEvent(id: string) {
         .catch(err => console.log(err))
 }
 
+
+// get events by name
+export async function getEventsByName(name: string) {
+    // if name is empty, get all events
+    if (name === "") {
+        return await fetch("http://localhost:5001/getEvents")
+
+            .then(res => res.json())
+            .then(res => res)
+            .catch(err => console.log(err))
+    }
+    
+    return await fetch(`http://localhost:5001/getEventsByName?name=${name}`)
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => console.log(err))
+}
+

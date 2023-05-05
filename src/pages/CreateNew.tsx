@@ -32,7 +32,7 @@ function CreateNew() {
     const handleCreateEvent = async (event: any) => {
         event.preventDefault();
         // send post request to backend with form data
-        await fetch("/create", {
+        const response = await fetch("http://localhost:5001/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -46,6 +46,7 @@ function CreateNew() {
                 status: form.status,
             }),
         });
+        console.log(response.json());
         // redirect to list page
         navigate("/list");
     };
@@ -84,7 +85,7 @@ function CreateNew() {
                 <input type="checkbox" id="adultp" name="adultp" onChange={handleChange}/>
                 <label htmlFor="msg"> Enter any request you would like to make</label>
                 <textarea id="msg" name="message" maxLength={500} className="textfield" ></textarea>
-                <input type="submit" value="submit" className="submitButtons login" onChange={handleCreateEvent}/>
+                <button className="submitButtons login" onClick={handleCreateEvent}> submit</button>
             </form>
         </div>
 

@@ -9,6 +9,7 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Details from './pages/Details';
+import EditView from './pages/EditView';
 
 
 interface authContext {
@@ -50,6 +51,7 @@ function App() {
               <Route path='/list' element={<List />}/>
               <Route path='/create' element={<CreateNew />}/>
               <Route path='/details' element={<Details />}/>
+              <Route path='/edit' element={<EditView />}/>
             </Routes>
         </Router>
     

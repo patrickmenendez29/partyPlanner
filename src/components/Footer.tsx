@@ -8,7 +8,7 @@ function getCopyrightSymbol() {
 export default function Footer() {
   return (
     <div className="footer">
-      <p>Copyright {getCopyrightSymbol()} 2023 Patrick Menendez</p>
+      <p>Copyright {getCopyrightSymbol()} 2023 Patrick Menendez & Victor Pinto</p>
     </div>
   );
 }

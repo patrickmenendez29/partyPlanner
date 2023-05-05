@@ -23,3 +23,54 @@ th {
 th td {
     border: none;
 }
+
+.listHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 400px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    
+    
+}
+
+/* Center modal div */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(39, 39, 39, 0.5);
+}
+
+/* Modal content */
+.modalWindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 50%;
+    height: 300px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.delete {
+    background-color: red;
+}
